@@ -4,7 +4,7 @@
 <title>Kirill Live</title>
 <meta name='viewport' content='width=device-width, initial-scale=1'/>
 <meta name="author" content="Kirill Live">
-<meta content="#aaa" name="theme-color" charset="UTF-8">
+<meta content="#7e9ef3" name="theme-color" charset="UTF-8">
 <style>
 *{
 	font-family:Arial;
@@ -24,7 +24,9 @@
 .button_menu{
     cursor:pointer;
     display:inline-grid;justify-content:center;align-items:center;
-    width:128px;
+    width:100%;
+    max-width:128px;
+    width:100%;
     height:40px;
     position:relative;
     border-radius:8px;
@@ -120,6 +122,7 @@
     max-height:246px;
     height:33vh;
     width:100%;
+    min-width:430px;
     background-color:var(--text);
     background-size:100% 100%;
     background-position:center bottom;
@@ -130,7 +133,7 @@
 <body style="background-color:#fff;">
 <div id="cover"></div>
 <div style="width:100%;" align="center">
-    <div style="height:100px;width:100%;max-width:1024px;position:relative;">
+    <div style="height:100px;width:100%;min-width:430px;max-width:1024px;position:relative;">
         <div id="avater" style="background-image:url(img/20191202_164204.jpg);"></div>
         <table id="main">
             <tbody>
@@ -191,6 +194,11 @@ var arr={
             art:"img/coverQR.jpg",
             url:"https://github.com/Kirilllive/QR_master",
             platform:["GitHub","Browser","Android"]
+        },{
+            name:"15 Puzzle game maker",
+            art:"img/15p.jpg",
+            url:"https://github.com/Kirilllive/Fifteen_puzzle_maker",
+            platform:["GitHub","Browser"]
         }
     ],
     games:[
