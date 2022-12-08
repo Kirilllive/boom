@@ -129,6 +129,48 @@
     left:6px;
     bottom:0;
 }
+#contact{
+    display:none;
+    position:fixed;
+    right:32px;
+    bottom:32px;
+    height:100px;
+    width:100px;
+    background-color:var(--text);
+    filter: drop-shadow( 0 2px 6px var(--text));
+    border-radius:50px;
+    overflow:hidden;
+    transition:0.6s;
+}
+#contact:hover{
+    width:328px;
+    transition:0.3s;
+}
+#contact::after{
+    content:"";
+    position:absolute;
+    height:100px;
+    width:100px;
+    left:0px;
+    top:0px;
+    background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 128 128'%3e %3cpath fill='none' stroke='%23fff' stroke-width='6' stroke-linejoin='round' d='M73,69l48,30 M53,69l-48,30 M63,74l58-46V100.5H5.5v-72Z M63,28l58,0-58,46L5.5,28.5Z'/%3e%3c/svg%3e");
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size: 50px 50px;
+}
+#contact div{
+    position:absolute;
+    height:100px;
+    width:328px;
+    left:100px;
+    top:0px;
+    color:#fff;
+    transition:0.4s;
+#contact div:hover{
+    left:100px;
+    transition:0.2s;
+}
+
 </style>
 </head>
 <body style="background-color:#fff;">
@@ -148,7 +190,7 @@
                 </tr>
             </tbody>
         </table>
-        <div id="content" style="padding:128px 8px;width:100%;display:grid;gap:32px 16px;">
+        <div id="content" style="padding:128px 8px 190px 8px;width:100%;display:grid;gap:32px 16px;">
             <a href='https://github.com/Kirilllive' target='_blank'><table class="item"><tbody>
                 <tr><td class="art" style="background-size:75% auto;"></td></tr>
                 <tr><td class="name">GitHub</td></tr>
@@ -168,6 +210,15 @@
         </div>
     </div>
 </div>
+
+<div id="contact"><div>
+    <table style="height:60px;margin-top:18px;"><tbody><tr>
+        <td style="width:50%;text-align:left;"><a style="color:#fff;" href="https://www.behance.net/kirill_live" target='_blank'>Behance</a></td>
+        <td style="width:50%;text-align:right;"><a style="color:#fff;" href="https://hh.ru/resume/3638312bff02c723a00039ed1f63337275756f" target='_blank'>HeadHunter</a></td>
+    </tr><tr>
+        <td colspan='2'><a style="color:#fff;" href="mailto:kirill.live.dev@gmail.com">kirill.live.dev@gmail.com</a></td>
+    </tr></tbody></table>
+</div></div>
 <script>
 var arr={
     info:{
@@ -332,6 +383,7 @@ function creation_menu(){
     t.getElementsByTagName('tr')[1].getElementsByTagName('td')[0].innerHTML+="<div id='cursor'></div>"
     avater.style.backgroundImage=arr.info.avatar;
     if(arr.info.cover){cover.style.backgroundImage=arr.info.cover;}
+    contact.style.display="block";
 }
 function show_catalog(n){
     var p="",h="";
