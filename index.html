@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Kirill Live</title>
+<meta name='viewport' content='width=device-width, initial-scale=1'/>
+<meta name="author" content="Kirill Live">
+<meta content="#aaa" name="theme-color" charset="UTF-8">
+<style>
+*{
+	font-family:Arial;
+    color:var(--text);
+	border-collapse:collapse;
+	border:none;
+	margin:0;
+	padding:0;
+	border-spacing:0px;
+    box-sizing:border-box;
+    text-decoration:none;
+}
+:root {
+  --text:#7e9ef3;
+  --shadow:#e9effd;
+}
+.button_menu{
+    cursor:pointer;
+    display:inline-grid;justify-content:center;align-items:center;
+    width:128px;
+    height:40px;
+    position:relative;
+    border-radius:8px;
+    margin:0 8px;
+    transition:0.4s;
+    overflow: hidden;
+}
+.button_menu:hover{
+    color:#fff;
+    transition:0.2s;
+    filter: drop-shadow( 0 1px 6px var(--text));
+}
+.button_menu:before{
+    position:absolute;
+    z-index: -2;
+    transform:translate(-50%,0%);
+    border-radius:8px;
+    content:"";
+    height:00px;
+    width:128px;
+    left:50%;
+    bottom:0%;
+    background-color:var(--text);
+    transition:0.4s;
+    box-shadow: 0 0px 0px 0px var(--shadow);
+}
+.button_menu:hover:before{
+    height:40px;
+    transition:0.2s;
+}
+#main{position:absolute;top:-136px;left:226px;width: calc(100% - 452px);}
+#main tr:first-child td:first-child {height:100px; color:var(--shadow);font-weight:bold;font-size:42px;text-shadow: 0px 2px 0px var(--text);text-align:left;}
+#main tr:last-child td:last-child {height:100px;white-space:nowrap;}
+#avater {background-size:cover;background-repeat:no-repeat;background-position:center;height:180px;width:180px;background-color:#faf;position:absolute;top:-126px;left:6px;border-radius:50%;border:6px solid #fff;}
+@media screen and (max-width:650px){
+    #content{grid-template-columns: 1fr 1fr;}
+    #main{position:absolute;top:-100px;left:0px;width:100%;}
+    #main tr:first-child td:first-child {text-align: center;}
+    #main tr:last-child td:last-child {height:100px;}
+    #avater {height:160px;width:160px;background-color:#faf;position:position;top:-240px;left:calc(50% - 80px);}
+}
+@media screen and (min-width:650px){#content{grid-template-columns: 1fr 1fr 1fr;}}
+@media screen and (min-width:900px){#content{grid-template-columns: 1fr 1fr 1fr 1fr;}}
+.Android{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 256 256'%3e%3cpath fill='%237e9ef3' d='M221,181A16,16,0,0,1,205,166v-67a16,16,0,0,1,31,0v67A16,16,0,0,1,221,181ZM183,205H170v35a16,16,0,0,1-31,0V205H117v35a16,16,0,0,1-31,0V205H72a16,16,0,0,1-16-16V87H199V189A16,16,0,0,1,183,205ZM91,23L81,6a3,3,0,0,1,5-3L97,20a86,86,0,0,1,61,0L169,3a3,3,0,1,1,5,3l-10,16C184,33,199,52,199,80H56C56,52,71,33,91,23ZM161,55a6,6,0,1,0-6-6A6,6,0,0,0,161,55ZM96,55a6,6,0,1,0-6-6A6,6,0,0,0,96,55ZM35,181A16,16,0,0,1,19,166v-67a16,16,0,0,1,31,0v67A16,16,0,0,1,35,181Z'/%3e%3c/svg%3e")}
+.Windows{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 128 128'%3e%3cpath fill='%237e9ef3' d='M54,114V68h66v59Zm0-99L120,1V60H54V15ZM46,60H8V26l38-9V60Zm0,53L8,105V68H46v45Z'/%3e%3c/svg%3e")}
+.macOS{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='-1 0 32 32'%3e%3crect x='0' y='4' width='30' height='24' fill='%237e9ef3' fill-opacity='.15' stroke='%237e9ef3' stroke-width='1.5' stroke-linejoin='round' /%3e%3cpath fill='%237e9ef3' d='m21.35,11.13v-3.52h-1.50v3.52zM8.88,11.13V7.61H7.37v3.52zm7.31,10.95C11.41,22.28 8.13,21.49 5.35,20.09l-0.76,1.08c2.84,1.70 7.32,2.47 11.64,2.26z'/%3e%3cpath fill='%237e9ef3' d='M18.23,31.87C15.91,27.35 15.59,22.10 16.52,18.27H11.36C11.53,10.37 15.59,3.75 18.75,0l1.01,0.84c-2.62,3.22 -6.36,8.79 -7.00,16.06h5.44c-0.44,1.61 -0.78,3.28 -0.80,5.07 3.05,-0.37 4.67,-0.76 6.93,-1.91l0.76,1.08c-1.97,1.17 -4.76,1.90 -7.70,2.17 0.08,2.61 0.67,5.24 2.04,7.94z'/%3e%3c/svg%3e")}
+.iOS{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 842 1e3'%3e%3cpath fill='%237e9ef3' d='M702 960c-54 53-114 44-171 20-61-25-116-27-180 0-80 34-122 24-170-20-271-279-231-704 77-720 75 4 127 41 171 44 65-13 128-51 198-46 84 7 147 40 189 100-173 104-132 332 27 396-32 84-73 166-141 227zM423 237C415 113 515 11 631 1c16 143-130 250-208 236z'/%3e%3c/svg%3e")}
+.Browser{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 1000 1000'%3e%3cpath fill='%237e9ef3' d='M69,10l78,881L499,990l354-99L931,10H69z M761,297H348l9,111h395l-31,333L501,802v1h-3L277,741l-14-170h107l8,86l120,33l121-33l14-140H258l-29-327h542L761,297z'/%3e%3c/svg%3e")}
+.GitHub{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 256 256'%3e%3cpath fill='%237e9ef3' d='M128,0C57,0 0,57 0,128c0,57 37,104 88,121 6,1 9,-3 9,-6 0,-3-0,-13-0,-24C64,225 56,212 53,204 52,201 45,189 40,186c-4,-2-11,-8-0,-8 10,-0 17,9 20,13 12,19 30,14 37,11 1,-8 4,-14 8,-17-28,-3-58,-14-58,-63 0,-14 5,-25 13,-34-1,-3-6,-16 1,-34 0,0 11,-3 35,13 10,-3 21,-4 32,-4 11,0 22,1 32,4 24,-17 35,-13 35,-13 7,18 3,31 1,34 8,9 13,20 13,34 0,49-30,60-58,63 5,4 9,12 9,24 0,17-0,31-0,35 0,3 2,7 9,6C219,232 256,184 256,128 256,57 199,0 128,0Z' /%3e%3c/svg%3e")}
+.item{
+    width:100%;
+    background-color:#fff;
+    border-radius:8px;
+    box-shadow: 0 0 0 1px var(--shadow);
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center;
+    cursor:pointer;
+    transition:0.4s;
+}
+.item:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 4px 8px 4px var(--shadow);
+    transition:0.15s;
+}
+.item .art{
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:center;
+    height:200px;
+    background-color:var(--shadow);
+    border-radius:8px 8px 0 0;}
+.item .name{height:54px;padding-left:10px;}
+.item .platform {height:26px;display:inline;white-space:nowrap;padding-left:6px;}
+.item .platform div{
+    display:inline-block;
+    background-size:16px 16px;
+    background-repeat:no-repeat;
+    background-position:center;
+    height:26px;
+    width:26px;
+}
+#cursor{
+    position:absolute;
+    background-color:var(--text);
+    height:2px;
+    width:calc(100% - 12px);
+    left:6px;
+    bottom:0;
+}
+#cover{
+    background-image:url("data:image/svg+xml,%3csvg version='1.1' xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 502 137' preserveAspectRatio='none'%3e%3cdefs%3e %3cstyle%3e @keyframes move1{0%{transform:translateX(-500px) scaleX(2.5);}100%{transform:translateX(0)scaleX(2.5);}}@keyframes move2{0%{transform:translateX(-600px) scaleX(3);}100%{transform:translateX(0)scaleX(3);}} @keyframes move3{0%{transform:translateX(-800px) scaleX(4);} 100%{transform:translateX(0) scaleX(4);}}%23wave1{animation:move1 26s linear infinite;} %23wave2{animation:move2 34s linear infinite;} %23wave3{animation:move3 40s linear infinite;}  %3c/style%3e%3c/defs%3e%3cg id='whole' fill='%23fff' transform='translate(0 -85.5)'%3e %3cpath id='wave1' fill-opacity='0.25' d='M0,200c50-50,99,0,99,0c51,50,101,0,101,0c50-50,100,0,100,0c50,50,100,0,100,0c50-50,100,0,100,0c50,50,100,0,100,0v200H0V200z'%3e%3c/path%3e %3cpath id='wave2' fill-opacity='0.4' d='M0,200c50-50,99,0,99,0c51,50,101,0,101,0c50-50,100,0,100,0c50,50,100,0,100,0c50-50,100,0,100,0c50,50,100,0,100,0v200H0V200z'%3e%3c/path%3e  %3cpath id='wave3' fill-opacity='1' d='M0,200c50-50,99,0,99,0c51,50,101,0,101,0c50-50,100,0,100,0c50,50,100,0,100,0c50-50,100,0,100,0c50,50,100,0,100,0v200H0V200z'%3e%3c/path%3e%3c/g%3e%3c/svg%3e");
+    max-height:246px;
+    height:33vh;
+    width:100%;
+    background-color:var(--text);
+    background-size:100% 100%;
+    background-position:center bottom;
+    background-repeat:no-repeat;
+}
+</style>
+</head>
+<body style="background-color:#fff;">
+<div id="cover"></div>
+<div style="width:100%;" align="center">
+    <div style="height:100px;width:100%;max-width:1024px;position:relative;">
+        <div id="avater" style="background-image:url(img/20191202_164204.jpg);"></div>
+        <table id="main">
+            <tbody>
+                <tr>
+                    <td>Kirill Live</td>
+                </tr>
+                <tr>
+                    <td align="center" valign="center">
+                        <div class="" style="font-weight:bold;color:#f88;">В вашем веб-браузере отключен JavaScript</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div id="content" style="padding:128px 8px;width:100%;display:grid;gap:32px 16px;">
+            <a href='https://github.com/Kirilllive' target='_blank'><table class="item"><tbody>
+                <tr><td class="art" style="background-size:75% auto;"></td></tr>
+                <tr><td class="name">GitHub</td></tr>
+            </tbody></table></a>
+            <a href='https://kirill-live.itch.io/' target='_blank'><table class="item"><tbody>
+                <tr><td class="art" style="background-size:75% auto;"></td></tr>
+                <tr><td class="name">itch.io</td></tr>
+            </tbody></table></a>
+            <a href='https://www.behance.net/kirill_live' target='_blank'><table class="item"><tbody>
+                <tr><td class="art" style="background-size:75% auto;"></td></tr>
+                <tr><td class="name">Behance</td></tr>
+            </tbody></table></a>
+            <a href='https://dribbble.com/Kirill_live' target='_blank'><table class="item"><tbody>
+                <tr><td class="art" style="background-size:75% auto;"></td></tr>
+                <tr><td class="name">Dribbble</td></tr>
+            </tbody></table></a>
+        </div>
+    </div>
+</div>
+<script>
+var arr={
+    info:{
+        name:"Kirill Live",
+        avatar:"img/20191202_164204.jpg"
+    },
+    apps:[
+        {
+            name:"Tuesday JS",
+            art:"img/1b3240ff-9db8-4163-92ba-f86e81d10967.jpg",
+            url:"https://github.com/Kirilllive/tuesday-js",
+            platform:["GitHub","Browser","Android","Windows","macOS"]
+        },{
+            name:"ASCII Art Paint",
+            art:"img/dce2d340-42ad-47ff-bc68-3f47a5cfed9f.jpg",
+            url:"https://github.com/Kirilllive/ASCII_Art_Paint",
+            platform:["GitHub","Browser"]
+        },{
+            name:"Golden Resort",
+            art:"img/golden.jpg",
+            url:"https://play.google.com/store/apps/details?id=com.golden.resort&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1&pli=1",
+            platform:["Android","iOS"]
+        },{
+            name:"QR master",
+            art:"img/coverQR.jpg",
+            url:"https://github.com/Kirilllive/QR_master",
+            platform:["GitHub","Browser","Android"]
+        }
+    ],
+    games:[
+        {
+            name:"UFO quest",
+            art:"arts/2352836.jpg",
+            url:"https://tuesday-street.itch.io/ufo-quest",
+            platform:["GitHub","Browser"]
+        },{
+            name:"Follower Battle",
+            art:"img/An3N5I.jpg",
+            url:"https://play.google.com/store/apps/details?id=followerbattle.game",
+            platform:["Android","iOS"]
+        },{
+            name:"ゴミのリサイクル",
+            art:"img/wasterecycling.jpg",
+            url:"https://kirill-live.itch.io/waste-recycling",
+            platform:["Browser","Android","iOS"]
+        },{
+            name:"Parsec space travel",
+            art:"arts/1280.jpg",
+            url:"https://play.google.com/store/apps/details?id=com.odin.ginnungagap",
+            platform:["Browser","Android","iOS"]
+        },{
+            name:"GeoCreeps",
+            art:"img/geocreeps.png",
+            url:"https://play.google.com/store/apps/details?id=com.geocreeps.game",
+            platform:["Android","iOS"]
+        },{
+            name:"Elephant journey",
+            art:"img/elephant_jornay.jpg",
+            url:"https://kirill-live.itch.io/elephant-journey",
+            platform:["Browser","Android","iOS"]
+        },{
+            name:"Brave Jumper",
+            art:"img/brave_jumper.jpg",
+            url:"https://kirill-live.itch.io/brave-jumper",
+            platform:["Browser","Android","iOS"]
+        },{
+            name:"Soap:bubbles vs microbes",
+            art:"arts/poster_soap.jpg",
+            url:"https://www.behance.net/gallery/31112299/Soap",
+            platform:["Browser","Android","iOS"]
+        }
+    ],
+    arts:[
+        {
+            name:"NPC Сharacters",
+            art:"arts/FfsGqKkXEAAuexp.jpg",
+            url:"arts/FfsGqKkXEAAuexp.jpg",
+            tip:"art"
+        },{
+            name:"Bank interior",
+            art:"arts/bank_interier.jpg",
+            url:"arts/bank_interier.jpg",
+            tip:"art"
+        },{
+            name:"Office interior",
+            art:"arts/FBCdimEWUAEaNWu.jpg",
+            url:"arts/FBCdimEWUAEaNWu.jpg",
+            tip:"art"
+        },{
+            name:"Chibi street",
+            art:"arts/room.jpg",
+            url:"arts/room.jpg",
+            tip:"art"
+        },{
+            name:"Parsec space travel",
+            art:"arts/1280.jpg",
+            url:"arts/1280.jpg",
+            tip:"art"
+        },{
+            name:"うる星やつら 2022",
+            art:"arts/2790685.jpg",
+            url:"arts/2790685.jpg",
+            tip:"art"
+        },{
+            name:"Poster U.F.O Quest",
+            art:"arts/2352836.jpg",
+            url:"arts/2352836.jpg",
+            tip:"art"
+        },{
+            name:"SPY×FAMILY / SPYvsSPY",
+            art:"arts/2530582.jpg",
+            url:"arts/2530582.jpg",
+            tip:"art"
+        },{
+            name:"SPY×FAMILY",
+            art:"arts/spy_x_family.jpg",
+            url:"arts/spy_x_family.jpg",
+            tip:"art"
+        },{
+            name:"七草ナズナ よふかしのうた",
+            art:"arts/nanakusa.jpg",
+            url:"arts/nanakusa.jpg",
+            tip:"art"
+        },{
+            name:"Harley Quinn",
+            art:"arts/2763735.jpg",
+            url:"arts/2763735.jpg",
+            tip:"art"
+        },{
+            name:"民主主義 星条旗ビキニ",
+            art:"arts/democracy.jpg",
+            url:"arts/democracy.jpg",
+            tip:"art"
+        },{
+            name:"Poster Soap game",
+            art:"arts/poster_soap.jpg",
+            url:"arts/poster_soap.jpg",
+            tip:"art"
+        },{
+            name:"3D modeling & animation",
+            art:"arts/LibGDX-Model-Preview-Utility-26.gif",
+            url:"arts/LibGDX-Model-Preview-Utility-26.gif",
+            tip:"art"
+        },{
+            name:"Imitation 2D style",
+            art:"arts/bT6GiB.gif",
+            url:"arts/bT6GiB.gif",
+            tip:"art"
+        }
+    ]
+}
+function creation_menu(){
+    var t=document.getElementById('main').getElementsByTagName('tbody')[0]
+    t.getElementsByTagName('tr')[0].getElementsByTagName('td')[0].innerHTML=arr.info.name;
+    t.getElementsByTagName('tr')[1].getElementsByTagName('td')[0].innerHTML="";
+    for(var i=0;i<Object.keys(arr).length;i++){t.getElementsByTagName('tr')[1].getElementsByTagName('td')[0].innerHTML+=(Object.keys(arr)[i]!="info")?"<div class='button_menu "+Object.keys(arr)[i]+"' onclick='show_catalog(\""+Object.keys(arr)[i]+"\");'>"+Object.keys(arr)[i].toUpperCase()+"</div>":"";}
+    t.getElementsByTagName('tr')[1].getElementsByTagName('td')[0].innerHTML+="<div id='cursor'></div>"
+    avater.style.backgroundImage=arr.info.avatar;
+    if(arr.info.cover){cover.style.backgroundImage=arr.info.cover;}
+}
+function show_catalog(n){
+    var p="",h="";
+    for(var e=0;e<arr[n].length;e++){
+        if(arr[n][e].platform&&arr[n][e].platform.length>0){for(var i=0;i<arr[n][e].platform.length;i++){p+="<div class='"+arr[n][e].platform[i]+"' title='"+arr[n][e].platform[i]+"'></div>"}}
+        if(arr[n][e].tip=="art"){h+="<a "+((arr[n][e].url)?"href='"+arr[n][e].url+"' target='_blank'":"")+"><table class='item'><tbody><tr><td class='art' "+((arr[n][e].art)?"style='height:230px;background-image:url("+arr[n][e].art+");'":"")+"></td></tr><tr><td class='name'>"+((arr[n][e].name)?arr[n][e].name:"")+"</td></tr></tbody></table></a>"}
+        else {h+="<a "+((arr[n][e].url)?"href='"+arr[n][e].url+"' target='_blank'":"")+"><table class='item'><tbody><tr><td class='art' "+((arr[n][e].art)?"style='background-image:url("+arr[n][e].art+");'":"")+"></td></tr><tr><td class='name'>"+arr[n][e].name+"</td></tr><tr><td class='platform'>"+p+"</td></tr></tbody></table></a>"}
+        p="";
+    }
+    document.getElementsByClassName(n)[0].appendChild(document.getElementById("cursor"))
+    window.location.hash=n;
+    content.innerHTML=h;
+}
+addEventListener("load",(e)=>{creation_menu();show_catalog( window.location.hash?window.location.hash.replace('#',''):(Object.keys(arr)[0]!="info")?Object.keys(arr)[0]:Object.keys(arr)[1])});
+</script>
+</body>
+</html>
+
