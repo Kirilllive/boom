@@ -73,16 +73,6 @@
 #main tr:first-child td:first-child {height:100px; color:var(--shadow);font-weight:bold;font-size:42px;text-shadow: 0px 2px 0px var(--text);text-align:left;}
 #main tr:last-child td:last-child {height:100px;white-space:nowrap;}
 #avater {background-size:cover;background-repeat:no-repeat;background-position:center;height:180px;width:180px;background-color:var(--shadow);position:absolute;top:-126px;left:6px;border-radius:50%;border:6px solid #fff;}
-@media screen and (max-width:650px){
-    #content{grid-template-columns: 1fr 1fr;}
-    #main{position:absolute;top:-100px;left:0px;width:100%;}
-    #main tr:first-child td:first-child {text-align: center;}
-    #main tr:last-child td:last-child {height:100px;}
-    #avater {height:160px;width:160px;background-color:#faf;position:position;top:-240px;left:calc(50% - 80px);}
-    
-}
-@media screen and (min-width:650px){#content{grid-template-columns: 1fr 1fr 1fr;}}
-@media screen and (min-width:900px){#content{grid-template-columns: 1fr 1fr 1fr 1fr;}}
 .Android{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 256 256'%3e%3cpath fill='%237e9ef3' d='M221,181A16,16,0,0,1,205,166v-67a16,16,0,0,1,31,0v67A16,16,0,0,1,221,181ZM183,205H170v35a16,16,0,0,1-31,0V205H117v35a16,16,0,0,1-31,0V205H72a16,16,0,0,1-16-16V87H199V189A16,16,0,0,1,183,205ZM91,23L81,6a3,3,0,0,1,5-3L97,20a86,86,0,0,1,61,0L169,3a3,3,0,1,1,5,3l-10,16C184,33,199,52,199,80H56C56,52,71,33,91,23ZM161,55a6,6,0,1,0-6-6A6,6,0,0,0,161,55ZM96,55a6,6,0,1,0-6-6A6,6,0,0,0,96,55ZM35,181A16,16,0,0,1,19,166v-67a16,16,0,0,1,31,0v67A16,16,0,0,1,35,181Z'/%3e%3c/svg%3e")}
 .Windows{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 128 128'%3e%3cpath fill='%237e9ef3' d='M54,114V68h66v59Zm0-99L120,1V60H54V15ZM46,60H8V26l38-9V60Zm0,53L8,105V68H46v45Z'/%3e%3c/svg%3e")}
 .macOS{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='-1 0 32 32'%3e%3crect x='0' y='4' width='30' height='24' fill='%237e9ef3' fill-opacity='.15' stroke='%237e9ef3' stroke-width='1.5' stroke-linejoin='round' /%3e%3cpath fill='%237e9ef3' d='m21.35,11.13v-3.52h-1.50v3.52zM8.88,11.13V7.61H7.37v3.52zm7.31,10.95C11.41,22.28 8.13,21.49 5.35,20.09l-0.76,1.08c2.84,1.70 7.32,2.47 11.64,2.26z'/%3e%3cpath fill='%237e9ef3' d='M18.23,31.87C15.91,27.35 15.59,22.10 16.52,18.27H11.36C11.53,10.37 15.59,3.75 18.75,0l1.01,0.84c-2.62,3.22 -6.36,8.79 -7.00,16.06h5.44c-0.44,1.61 -0.78,3.28 -0.80,5.07 3.05,-0.37 4.67,-0.76 6.93,-1.91l0.76,1.08c-1.97,1.17 -4.76,1.90 -7.70,2.17 0.08,2.61 0.67,5.24 2.04,7.94z'/%3e%3c/svg%3e")}
@@ -135,15 +125,16 @@
     position:fixed;
     right:32px;
     bottom:32px;
-    height:100px;
-    width:100px;
+    height:104px;
+    width:104px;
+    border:2px solid var(--text);
     background-color:var(--text);
     filter: drop-shadow( 0 2px 6px var(--text));
     border-radius:50px;
     overflow:hidden;
     transition:0.6s;
     background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 128 128'%3e %3cpath fill='none' stroke='%23fff' stroke-width='6' stroke-linejoin='round' d='M73,69l48,30 M53,69l-48,30 M63,74l58-46V100.5H5.5v-72Z M63,28l58,0-58,46L5.5,28.5Z'/%3e%3c/svg%3e");
-    background-position:25px center;
+    background-position:26px center;
     background-repeat:no-repeat;
     background-size: 50px 50px;
 }
@@ -164,7 +155,17 @@
     left:100px;
     transition:0.2s;
 }
-
+.text{text-align:left;}
+@media screen and (max-width:650px){
+    #content{grid-template-columns: 1fr 1fr;}
+    #main{position:absolute;top:-100px;left:0px;width:100%;}
+    #main tr:first-child td:first-child {text-align: center;}
+    #main tr:last-child td:last-child {height:100px;}
+    #avater {height:160px;width:160px;background-color:#faf;position:position;top:-240px;left:calc(50% - 80px);}
+    .text{grid-column:1 / 3;}
+}
+@media screen and (min-width:650px){#content{grid-template-columns: 1fr 1fr 1fr;}.text{grid-column:1 / 4;}}
+@media screen and (min-width:900px){#content{grid-template-columns: 1fr 1fr 1fr 1fr;}.text{grid-column:1 / 5;}}
 </style>
 </head>
 <body style="background-color:#fff;">
@@ -223,6 +224,12 @@ var arr={
     },
     apps:[
         {
+            name:"FIGMA",
+            tip:"text"
+        },{
+            name:"COMPLETED",
+            tip:"text"
+        },{
             name:"Tuesday JS",
             art:"img/1b3240ff-9db8-4163-92ba-f86e81d10967.jpg",
             url:"https://github.com/Kirilllive/tuesday-js",
@@ -251,15 +258,21 @@ var arr={
     ],
     games:[
         {
-            name:"UFO quest",
-            art:"arts/2352836.jpg",
-            url:"https://tuesday-street.itch.io/ufo-quest",
-            platform:["GitHub","Browser"]
+            name:"MMO RPG",
+            tip:"text"
         },{
             name:"Follower Battle",
             art:"img/An3N5I.jpg",
             url:"https://play.google.com/store/apps/details?id=followerbattle.game",
             platform:["Android","iOS"]
+        },{
+            name:"GeoCreeps",
+            art:"img/geocreeps.png",
+            url:"https://play.google.com/store/apps/details?id=com.geocreeps.game",
+            platform:["Android","iOS"]
+        },{
+            name:"CASYAL",
+            tip:"text"
         },{
             name:"ゴミのリサイクル",
             art:"img/wasterecycling.jpg",
@@ -270,11 +283,6 @@ var arr={
             art:"arts/1280.jpg",
             url:"https://play.google.com/store/apps/details?id=com.odin.ginnungagap",
             platform:["Browser","Android","iOS"]
-        },{
-            name:"GeoCreeps",
-            art:"img/geocreeps.png",
-            url:"https://play.google.com/store/apps/details?id=com.geocreeps.game",
-            platform:["Android","iOS"]
         },{
             name:"Elephant journey",
             art:"img/elephant_jornay.jpg",
@@ -290,6 +298,14 @@ var arr={
             art:"arts/poster_soap.jpg",
             url:"https://www.behance.net/gallery/31112299/Soap",
             platform:["Browser","Android","iOS"]
+        },{
+            name:"TEXT ADVENCER",
+            tip:"text"
+        },{
+            name:"UFO quest",
+            art:"arts/2352836.jpg",
+            url:"https://tuesday-street.itch.io/ufo-quest",
+            platform:["GitHub","Browser"]
         }
     ],
     arts:[
@@ -314,19 +330,35 @@ var arr={
             url:"arts/room.jpg",
             tip:"art"
         },{
+            name:"GAMES COVERS",
+            tip:"text"
+        },{
             name:"Parsec space travel",
             art:"arts/1280.jpg",
             url:"arts/1280.jpg",
             tip:"art"
         },{
-            name:"うる星やつら 2022",
-            art:"arts/2790685.jpg",
-            url:"arts/2790685.jpg",
-            tip:"art"
-        },{
             name:"Poster U.F.O Quest",
             art:"arts/2352836.jpg",
             url:"arts/2352836.jpg",
+            tip:"art"
+        },{
+            name:"Poster Soap game",
+            art:"arts/poster_soap.jpg",
+            url:"arts/poster_soap.jpg",
+            tip:"art"
+        },{
+            name:"FAN ART",
+            tip:"text"
+        },{
+            name:"Dr. Strangelove",
+            art:"arts/democracy.jpg",
+            url:"arts/democracy.jpg",
+            tip:"art"
+        },{
+            name:"うる星やつら 2022",
+            art:"arts/2790685.jpg",
+            url:"arts/2790685.jpg",
             tip:"art"
         },{
             name:"SPY×FAMILY / SPYvsSPY",
@@ -348,16 +380,6 @@ var arr={
             art:"arts/2763735.jpg",
             url:"arts/2763735.jpg",
             tip:"art"
-        },{
-            name:"民主主義 星条旗ビキニ",
-            art:"arts/democracy.jpg",
-            url:"arts/democracy.jpg",
-            tip:"art"
-        },{
-            name:"Poster Soap game",
-            art:"arts/poster_soap.jpg",
-            url:"arts/poster_soap.jpg",
-            tip:"art"
         }
     ]
 }
@@ -376,6 +398,7 @@ function show_catalog(n){
     for(var e=0;e<arr[n].length;e++){
         if(arr[n][e].platform&&arr[n][e].platform.length>0){for(var i=0;i<arr[n][e].platform.length;i++){p+="<div class='"+arr[n][e].platform[i]+"' title='"+arr[n][e].platform[i]+"'></div>"}}
         if(arr[n][e].tip=="art"){h+="<a "+((arr[n][e].url)?"href='"+arr[n][e].url+"' target='_blank'":"")+"><table class='item'><tbody><tr><td class='art' "+((arr[n][e].art)?"style='height:230px;background-image:url("+arr[n][e].art+");'":"")+"></td></tr><tr><td class='name'>"+((arr[n][e].name)?arr[n][e].name:"")+"</td></tr></tbody></table></a>"}
+        else if(arr[n][e].tip=="text"){h+="<div class='text'>"+((arr[n][e].name)?arr[n][e].name:"")+"</div>"}
         else {h+="<a "+((arr[n][e].url)?"href='"+arr[n][e].url+"' target='_blank'":"")+"><table class='item'><tbody><tr><td class='art' "+((arr[n][e].art)?"style='background-image:url("+arr[n][e].art+");'":"")+"></td></tr><tr><td class='name'>"+arr[n][e].name+"</td></tr><tr><td class='platform'>"+p+"</td></tr></tbody></table></a>"}
         p="";
     }
