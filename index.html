@@ -7,12 +7,14 @@
 <meta content="#7e9ef3" name="theme-color" charset="UTF-8">
 <style>
 :root {
-  --text:#7e9ef3;
-  --shadow:#e9effd;
+  --color_w:#7e9ef3;
+  --color_b:#e9effd;
+  --shadow:rgba(126,158,243,0.5);
+
 }
 *{
 	font-family:Arial;
-    color:var(--text);
+    color:var(--color_w);
 	border-collapse:collapse;
 	border:none;
 	margin:0;
@@ -22,6 +24,9 @@
     text-decoration:none;
 }
 *::selection{background: #66a;color:#fff;}
+body{
+    background-color: #e9effd;
+}
 .button_menu{
     cursor:pointer;
     display:inline-grid;justify-content:center;align-items:center;
@@ -38,7 +43,7 @@
 .button_menu:hover{
     color:#fff;
     transition:0.2s;
-    filter: drop-shadow( 0 1px 6px var(--text));
+    filter: drop-shadow( 0 1px 6px var(--color_w));
 }
 .button_menu:before{
     position:absolute;
@@ -50,9 +55,9 @@
     width:128px;
     left:50%;
     bottom:0%;
-    background-color:var(--text);
+    background-color:var(--color_w);
     transition:0.4s;
-    box-shadow: 0 0px 0px 0px var(--shadow);
+    box-shadow: 0 0px 0px 0px var(--color_b);
 }
 .button_menu:hover:before{
     height:40px;
@@ -60,7 +65,7 @@
 }
 
 #cover{
-    background-image:url("data:image/svg+xml,%3csvg version='1.1' xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 502 137' preserveAspectRatio='none'%3e%3cdefs%3e %3cstyle%3e @keyframes move1{0%{transform:translateX(-500px) scaleX(2.5);}100%{transform:translateX(0)scaleX(2.5);}}@keyframes move2{0%{transform:translateX(-600px) scaleX(3);}100%{transform:translateX(0)scaleX(3);}} @keyframes move3{0%{transform:translateX(-800px) scaleX(4);} 100%{transform:translateX(0) scaleX(4);}}%23wave1{animation:move1 26s linear infinite;} %23wave2{animation:move2 34s linear infinite;} %23wave3{animation:move3 40s linear infinite;}  %3c/style%3e%3c/defs%3e%3cg id='whole' fill='%23fff' transform='translate(0 -85.5)'%3e %3cpath id='wave1' fill-opacity='0.25' d='M0,200c50-50,99,0,99,0c51,50,101,0,101,0c50-50,100,0,100,0c50,50,100,0,100,0c50-50,100,0,100,0c50,50,100,0,100,0v200H0V200z'%3e%3c/path%3e %3cpath id='wave2' fill-opacity='0.4' d='M0,200c50-50,99,0,99,0c51,50,101,0,101,0c50-50,100,0,100,0c50,50,100,0,100,0c50-50,100,0,100,0c50,50,100,0,100,0v200H0V200z'%3e%3c/path%3e  %3cpath id='wave3' fill-opacity='1' d='M0,200c50-50,99,0,99,0c51,50,101,0,101,0c50-50,100,0,100,0c50,50,100,0,100,0c50-50,100,0,100,0c50,50,100,0,100,0v200H0V200z'%3e%3c/path%3e%3c/g%3e%3c/svg%3e"),url("img/bg.png");
+    background-image:url("data:image/svg+xml,%3csvg version='1.1' xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 502 137' preserveAspectRatio='none'%3e%3cdefs%3e %3cstyle%3e @keyframes move1{0%{transform:translateX(-500px) scaleX(2.5);}100%{transform:translateX(0)scaleX(2.5);}}@keyframes move2{0%{transform:translateX(-600px) scaleX(3);}100%{transform:translateX(0)scaleX(3);}} @keyframes move3{0%{transform:translateX(-800px) scaleX(4);} 100%{transform:translateX(0) scaleX(4);}}%23wave1{animation:move1 26s linear infinite;} %23wave2{animation:move2 34s linear infinite;} %23wave3{animation:move3 40s linear infinite;}  %3c/style%3e%3c/defs%3e%3cg id='whole' fill='%23e9effd' transform='translate(0 -85.5)'%3e %3cpath id='wave1' fill-opacity='0.25' d='M0,200c50-50,99,0,99,0c51,50,101,0,101,0c50-50,100,0,100,0c50,50,100,0,100,0c50-50,100,0,100,0c50,50,100,0,100,0v200H0V200z'%3e%3c/path%3e %3cpath id='wave2' fill-opacity='0.4' d='M0,200c50-50,99,0,99,0c51,50,101,0,101,0c50-50,100,0,100,0c50,50,100,0,100,0c50-50,100,0,100,0c50,50,100,0,100,0v200H0V200z'%3e%3c/path%3e  %3cpath id='wave3' fill-opacity='1' d='M0,200c50-50,99,0,99,0c51,50,101,0,101,0c50-50,100,0,100,0c50,50,100,0,100,0c50-50,100,0,100,0c50,50,100,0,100,0v200H0V200z'%3e%3c/path%3e%3c/g%3e%3c/svg%3e"),url("img/bg.png");
     min-height:260px;
     height:33vh;
     width:100%;
@@ -71,9 +76,9 @@
     background-repeat:no-repeat,repeat-x;
 }
 #main{position:absolute;top:-136px;left:226px;width: calc(100% - 452px);}
-#main tr:first-child td:first-child {height:100px; color:var(--shadow);font-weight:bold;font-size:42px;text-shadow: 0px 2px 0px var(--text);text-align:left;}
+#main tr:first-child td:first-child {height:100px; color:#fff;font-weight:bold;font-size:42px;text-shadow: 0px 2px 0px var(--color_w);text-align:left;}
 #main tr:last-child td:last-child {height:100px;white-space:nowrap;}
-#avater {background-size:cover;background-repeat:no-repeat;background-position:center;height:180px;width:180px;background-color:var(--shadow);position:absolute;top:-126px;left:6px;border-radius:50%;border:6px solid #fff;}
+#avater {background-size:cover;background-repeat:no-repeat;background-position:center;height:180px;width:180px;background-color:var(--color_b);position:absolute;top:-126px;left:6px;border-radius:50%;border:6px solid var(--color_b);}
 .Android{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 256 256'%3e%3cpath fill='%237e9ef3' d='M221,181A16,16,0,0,1,205,166v-67a16,16,0,0,1,31,0v67A16,16,0,0,1,221,181ZM183,205H170v35a16,16,0,0,1-31,0V205H117v35a16,16,0,0,1-31,0V205H72a16,16,0,0,1-16-16V87H199V189A16,16,0,0,1,183,205ZM91,23L81,6a3,3,0,0,1,5-3L97,20a86,86,0,0,1,61,0L169,3a3,3,0,1,1,5,3l-10,16C184,33,199,52,199,80H56C56,52,71,33,91,23ZM161,55a6,6,0,1,0-6-6A6,6,0,0,0,161,55ZM96,55a6,6,0,1,0-6-6A6,6,0,0,0,96,55ZM35,181A16,16,0,0,1,19,166v-67a16,16,0,0,1,31,0v67A16,16,0,0,1,35,181Z'/%3e%3c/svg%3e")}
 .Windows{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 128 128'%3e%3cpath fill='%237e9ef3' d='M54,114V68h66v59Zm0-99L120,1V60H54V15ZM46,60H8V26l38-9V60Zm0,53L8,105V68H46v45Z'/%3e%3c/svg%3e")}
 .macOS{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='-1 0 32 32'%3e%3crect x='0' y='4' width='30' height='24' fill='%237e9ef3' fill-opacity='.15' stroke='%237e9ef3' stroke-width='1.5' stroke-linejoin='round' /%3e%3cpath fill='%237e9ef3' d='m21.35,11.13v-3.52h-1.50v3.52zM8.88,11.13V7.61H7.37v3.52zm7.31,10.95C11.41,22.28 8.13,21.49 5.35,20.09l-0.76,1.08c2.84,1.70 7.32,2.47 11.64,2.26z'/%3e%3cpath fill='%237e9ef3' d='M18.23,31.87C15.91,27.35 15.59,22.10 16.52,18.27H11.36C11.53,10.37 15.59,3.75 18.75,0l1.01,0.84c-2.62,3.22 -6.36,8.79 -7.00,16.06h5.44c-0.44,1.61 -0.78,3.28 -0.80,5.07 3.05,-0.37 4.67,-0.76 6.93,-1.91l0.76,1.08c-1.97,1.17 -4.76,1.90 -7.70,2.17 0.08,2.61 0.67,5.24 2.04,7.94z'/%3e%3c/svg%3e")}
@@ -85,24 +90,62 @@
     width:100%;
     background-color:#fff;
     border-radius:8px;
-    box-shadow: 0 0 0 1px var(--shadow);
     background-size:cover;
     background-repeat:no-repeat;
     background-position:center;
     cursor:pointer;
     transition:0.4s;
+    position: relative;
 }
 .item:hover{
-    transform: translateY(-8px);
-    box-shadow: 0 4px 8px 4px var(--shadow);
-    transition:0.15s;
+    transform: translateX(-2px) translateY(-8px);
+    transition:0.2s;
 }
+.item::after{
+    content:'';
+    background-color:rgba(255,255,255,1);
+    position:absolute;
+    left:0px;
+    top:0px;
+    height:100%;
+    transition:0.4s;
+    border-radius:inherit;
+    width:inherit;
+    z-index:-1;
+}
+.item:hover:after{
+    filter: drop-shadow( 0 5px 4px rgba(126,158,243,0.3));
+    transition:0.2s;
+    content:'';
+}
+.item::before{
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3e%3cpath fill='rgba(126,158,243,0.3)' d='M17.782-18.055l-4.01,4.01L45.85,18.032l4.01-4.01Z M-14.3,14.023l-4.01,4.01L13.773,50.11l4.01-4.01Z M9.763-10.036l-4.01,4.01L37.831,26.052l4.01-4.01Z M1.744-2.016l-4.01,4.01L29.812,34.071l4.01-4.01Z M-6.276,6l-4.01,4.01L21.792,42.091l4.01-4.01Z'/%3e%3c/svg%3e");
+    content:'';
+    position:absolute;
+    right:0px;
+    bottom:0px;
+    animation:bg-scrolling_l .6s infinite;
+    animation-timing-function:linear;
+    height:96%;
+    transition:0.4s;
+    border-radius:inherit;
+    visibility:collapse;
+    width:96%;
+    z-index:-2;
+}
+.item:hover:before{
+    right:-8px;
+    bottom:-10px;
+    visibility:visible;
+    transition:0.2s;
+}
+@keyframes bg-scrolling_l {100%{background-position:-16px 0px;}}
 .item .art{
     background-size:cover;
     background-repeat:no-repeat;
     background-position:center;
     height:200px;
-    background-color:var(--shadow);
+    background-color:var(--color_w);
     border-radius:8px 8px 0 0;}
 .item .name{height:54px;padding-left:10px;}
 .item .platform {height:26px;display:inline;white-space:nowrap;padding-left:6px;}
@@ -116,9 +159,10 @@
 }
 #cursor{
     position:absolute;
-    background-color:var(--text);
+    background-color:var(--color_w);
     height:2px;
     width:calc(100% - 12px);
+    border-radius:1px;
     left:6px;
     bottom:0;
 }
@@ -129,9 +173,9 @@
     bottom:32px;
     height:104px;
     width:104px;
-    border:2px solid var(--text);
-    background-color:var(--text);
-    filter: drop-shadow( 0 2px 6px var(--text));
+    border:2px solid var(--color_w);
+    background-color:var(--color_w);
+    filter: drop-shadow( 0 2px 6px rgb(126,158,243));
     border-radius:50px;
     overflow:hidden;
     transition:0.6s;
@@ -168,9 +212,12 @@
 }
 @media screen and (min-width:650px){#content{grid-template-columns: 1fr 1fr 1fr;}.text{grid-column:1 / 4;}}
 @media screen and (min-width:900px){#content{grid-template-columns: 1fr 1fr 1fr 1fr;}.text{grid-column:1 / 5;}}
+
+
+
 </style>
 </head>
-<body style="background-color:#fff;">
+<body>
 <div id="cover"></div>
 <div style="width:100%;" align="center">
     <div style="height:100px;width:100%;min-width:430px;max-width:1024px;position:relative;">
