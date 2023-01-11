@@ -149,11 +149,11 @@ body{background-color: var(--color_b);}
     background-color:var(--color_w);
     background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%' viewBox='0 0 128 128'%3e%3ccircle cx='64' cy='64' r='56' style='stroke: %23fff; stroke-dasharray:360; stroke-dashoffset:360; stroke-width:8; fill:transparent'%3e%3canimate attributeName='stroke-dashoffset' dur='1.5s' to='-360' repeatCount='indefinite'/%3e%3canimateTransform attributeName='transform' type='rotate' values='0 64 64;360 64 64' dur='1s' repeatCount='indefinite'/%3e%3c/circle%3e%3c/svg%3e")
 }
-.item .name{height:54px;padding-left:10px;}
+.item .name{height:34px;padding: 0 0 4px 10px;}
 .item .platform {height:26px;display:inline;white-space:nowrap;padding-left:6px;}
 .item .platform div{
     display:inline-block;
-    height:26px;width:26px;
+    height:28px;width:26px;
     background-size:16px 16px;
     background-position:center;
     background-repeat:no-repeat;
@@ -265,11 +265,6 @@ var arr={
             url:"https://github.com/Kirilllive/tuesday-js",
             platform:["GitHub","Browser","Android","Windows","macOS"]
         },{
-            name:"ASCII Art Paint",
-            art:"img/dce2d340-42ad-47ff-bc68-3f47a5cfed9f.jpg",
-            url:"https://github.com/Kirilllive/ASCII_Art_Paint",
-            platform:["GitHub","Browser"]
-        },{
             name:"Golden Resort",
             art:"img/golden.jpg",
             url:"https://play.google.com/store/apps/details?id=com.golden.resort&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1&pli=1",
@@ -280,7 +275,12 @@ var arr={
             url:"https://github.com/Kirilllive/QR_master",
             platform:["GitHub","Browser","Android"]
         },{
-            name:"15 Puzzle game maker",
+            name:"ASCII Art Paint",
+            art:"img/dce2d340-42ad-47ff-bc68-3f47a5cfed9f.jpg",
+            url:"https://github.com/Kirilllive/ASCII_Art_Paint",
+            platform:["GitHub","Browser"]
+        },{
+            name:"Fifteen Puzzle maker",
             art:"img/15p.jpg",
             url:"https://github.com/Kirilllive/Fifteen_puzzle_maker",
             platform:["GitHub","Browser"]
@@ -298,6 +298,11 @@ var arr={
             name:"GeoCreeps",
             art:"img/geocreeps.png",
             url:"https://play.google.com/store/apps/details?id=com.geocreeps.game",
+            platform:["Android","iOS"]
+        },{
+            name:"Sky Age",
+            art:"img/",
+            url:"https://play.google.com/store/apps/details?id=com.odin.sky_age&hl=en&gl=US&pli=1",
             platform:["Android","iOS"]
         },{
             name:"CASUAL",
@@ -334,6 +339,11 @@ var arr={
             name:"UFO quest",
             art:"arts/2352836.jpg",
             url:"https://tuesday-street.itch.io/ufo-quest",
+            platform:["GitHub","Browser"]
+        },{
+            name:"Rock Paper Scissors",
+            art:"img/rock_paper_scissors.jpg",
+            url:"https://tuesday-street.itch.io/rock-paper-scissors",
             platform:["GitHub","Browser"]
         }
     ],arts:[
@@ -389,14 +399,14 @@ var arr={
             url:"arts/2530582.jpg",
             tip:"art"
         },{
-            name:"Harley Quinn",
-            art:"arts/2763735.jpg",
-            url:"arts/2763735.jpg",
+            name:"Happy new year 2022",
+            art:"arts/6129690.jpg",
+            url:"arts/6129690.jpg",
             tip:"art"
         },{
             name:"Harley Quinn",
-            art:"arts/6129690.jpg",
-            url:"arts/6129690.jpg",
+            art:"arts/2763735.jpg",
+            url:"arts/2763735.jpg",
             tip:"art"
         },{
             name:"七草ナズナ よふかしのうた",
@@ -425,9 +435,9 @@ function show_catalog(n){
     var p="",h="";
     for(var e=0;e<arr[n].length;e++){
         if(arr[n][e].platform&&arr[n][e].platform.length>0){for(var i=0;i<arr[n][e].platform.length;i++){p+="<div class='"+arr[n][e].platform[i]+"' title='"+arr[n][e].platform[i]+"'></div>"}}
-        if(arr[n][e].tip=="art"){h+="<a "+((arr[n][e].url)?"href='"+arr[n][e].url+"' target='_blank'":"")+"><table class='item'><tbody><tr><td class='art' "+((arr[n][e].art)?"style='height:230px;background-image:url("+arr[n][e].art+");'":"")+"></td></tr><tr><td class='name'>"+((arr[n][e].name)?arr[n][e].name:"")+"</td></tr></tbody></table></a>"}
+        if(arr[n][e].tip=="art"){h+="<a "+((arr[n][e].url)?"href='"+arr[n][e].url+"' target='_blank'":"")+"><table class='item'><tbody><tr><td class='art' "+((arr[n][e].art)?"style='height:230px;background-image:url("+arr[n][e].art+");'":"")+"></td></tr><tr><td class='name' style='padding-top:5px;'>"+((arr[n][e].name)?arr[n][e].name:"")+"</td></tr></tbody></table></a>"}
         else if(arr[n][e].tip=="text"){h+="<div class='text'>"+((arr[n][e].name)?arr[n][e].name:"")+"</div>"}
-        else {h+="<a "+((arr[n][e].url)?"href='"+arr[n][e].url+"' target='_blank'":"")+"><table class='item'><tbody><tr><td class='art' "+((arr[n][e].art)?"style='background-image:url("+arr[n][e].art+");'":"")+"></td></tr><tr><td class='name'>"+arr[n][e].name+"</td></tr><tr><td class='platform'>"+p+"</td></tr></tbody></table></a>"}
+        else {h+="<a "+((arr[n][e].url)?"href='"+arr[n][e].url+"' target='_blank'":"")+"><table class='item'><tbody><tr><td class='art' "+((arr[n][e].art)?"style='background-image:url("+arr[n][e].art+");'":"")+"></td></tr><tr><td class='name' valign='bottom'>"+arr[n][e].name+"</td></tr><tr><td class='platform'>"+p+"</td></tr></tbody></table></a>"}
         p="";
     }
     document.getElementsByClassName(n)[0].appendChild(document.getElementById("cursor"))
